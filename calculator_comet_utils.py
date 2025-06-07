@@ -10,9 +10,11 @@ def calculate_comet_scores(output_file_path, model_directory):
     - model_directory: 模型下载保存路径
     """
     # 下载并加载COMET模型
-    comet_model_path = download_model("Unbabel/wmt22-cometkiwi-da", saving_directory=model_directory, local_files_only=True)
     try:
-        comet_model = load_from_checkpoint(comet_model_path, local_files_only=True)
+        # 先尝试下载模型（如果本地不存在）
+        comet_model_path = download_model("Unbabel/wmt22-cometkiwi-da", saving_directory=model_directory)
+        # 加载模型
+        comet_model = load_from_checkpoint(comet_model_path)
     except Exception as model_error:
         print(f"COMET模型加载失败：{model_error}")
         exit(1)

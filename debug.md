@@ -92,6 +92,7 @@ bug修复：使用git clone克隆hugeface仓库报错：
 
 嵌入式python需要指定python解释器路径然后再执行脚本。
 
+$env:HF_ENDPOINT = "https://hf-mirror.com"
 .\python-3.12.8-embed-amd64\python.exe WebUI.py
 
 第十一次记录：正在使用镜像站 https://hf-mirror.com 下载模型...
@@ -102,6 +103,8 @@ COMET模型加载失败：(MaxRetryError("HTTPSConnectionPool(host='huggingface.
 请检查网络连接或手动下载模型。
 
 这种情况可以使用镜像站环境变量，或者直接在download_model和load_from_checkpoint这两函数里面把local_files_only选项打开，直接跳过网页验证使用本地模型。
+
+第十二次记录：不使用GPU加速的情况下，可以直接删除xlm-roberta-large中的pytorch_model.bin文件。目前并未影响使用。
 
 
 
