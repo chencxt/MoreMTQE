@@ -1,0 +1,19 @@
+{
+  "translations": [
+    {
+      "num": 1,
+      "original": "Hello, world!",
+      "translation": "你好，世界！"
+    },
+    {
+      "num": 2,
+      "original": "How are you?",
+      "translation": "你好吗？"
+    },
+    {
+      "num": 3,
+      "original": "Good morning.",
+      "translation": "早上好。"
+    }
+  ]
+}

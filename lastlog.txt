@@ -1,0 +1,6 @@
+JSON file has been created successfully: formatted_translations.json
+JSON file has been created successfully: formatted_translations.json
+JSON file has been created successfully: formatted_translations.json
+已生成文件：outputINFO.json
+已更新文件：添加COMET评分
+已更新文件：outputINFO.json
