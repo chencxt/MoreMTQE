@@ -19,6 +19,50 @@ MoreMTQE 是一个用于评估机器翻译质量的项目，支持多种翻译�
 - **Translation.txt**：译文文件，包含机器翻译生成的目标语言句子。
 - 两个文件中的句子需 **一一对应**，即每行内容为一个句子，行数一致。
 
+## 使用教程 (默认为windows系统)：
+
+ 0、如果您使用了一键整合包，请直接双击启动START_Windows.bat。无需后续操作
+
+ 1、如果您使用仓库进行配置，请先克隆仓库并跳转到仓库目录下。
+ ```
+ git clone https://github.com/chencxt/MoreMTQE.git
+ ```
+ 2、配置并激活虚拟环境：
+ ```
+ python -m venv .venv
+ .venv\Scripts\activate
+ ```
+
+ 3、在虚拟环境中安装依赖包：
+
+ ```
+ pip install -r requirements.txt
+ ```
+
+ 4、克隆模型文件
+ ```
+ # Make sure git-lfs is installed (https://git-lfs.com)
+ git lfs install
+ git clone https://huggingface.co/FacebookAI/xlm-roberta-large
+ git clone https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+ # wmt22-cometkiwi-da需要在线验证，如果没有则会自动下载，所以请确保网络畅通，并在仓库根目录中新建一个“wmt22-cometkiwi-da”文件夹用来指引下载。
+ ```
+ 5、设置临时环境变量（若您有梯子可跳过此步骤）
+ ```
+ set HF_ENDPOINT=https://hf-mirror.com
+ ```
+ 6、启动gradio，Enjoy it !
+ ```
+ python WebUI.py
+ # 启动完成后，浏览器输入以下网址并进入: http://127.0.0.1:7860
+ # 译文需要命名为Translation.txt，原文需要命名为Origin.txt，将二者放在仓库根目录
+ ```
+ 7、关闭程序。
+ ```
+ # 先用快捷键Ctrl+C终止程序，然后输入以下程序退出虚拟环境。
+ deactivate
+ ```
+
 ## 参数与权重说明
 
 本项目使用三个主要的评估指标，每个指标可设置相应的权重参数：

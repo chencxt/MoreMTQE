@@ -106,6 +106,49 @@ COMET模型加载失败：(MaxRetryError("HTTPSConnectionPool(host='huggingface.
 
 第十二次记录：不使用GPU加速的情况下，可以直接删除xlm-roberta-large中的pytorch_model.bin文件。目前并未影响使用。
 
+第十三次记录：使用教程 (默认为windows系统)：
+
+ 0、如果您使用了一键整合包，请直接双击启动START_Windows.bat。无需后续操作
+
+ 1、如果您使用仓库进行配置，请先克隆仓库并跳转到仓库目录下。
+ ```
+ git clone https://github.com/chencxt/MoreMTQE.git
+ ```
+ 2、配置并激活虚拟环境：
+ ```
+ python -m venv .venv
+ .venv\Scripts\activate
+ ```
+
+ 3、在虚拟环境中安装依赖包：
+
+ ```
+ pip install -r requirements.txt
+ ```
+
+ 4、克隆模型文件
+ ```
+ # Make sure git-lfs is installed (https://git-lfs.com)
+ git lfs install
+ git clone https://huggingface.co/FacebookAI/xlm-roberta-large
+ git clone https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+ # wmt22-cometkiwi-da需要在线验证，如果没有则会自动下载，所以请确保网络畅通，并在仓库根目录中新建一个“wmt22-cometkiwi-da”文件夹用来指引下载。
+ ```
+ 5、设置临时环境变量（若您有梯子可跳过此步骤）
+ ```
+ set HF_ENDPOINT=https://hf-mirror.com
+ ```
+ 6、启动gradio，Enjoy it !
+ ```
+ python WebUI.py
+ # 启动完成后，浏览器输入以下网址并进入: http://127.0.0.1:7860
+ # 译文需要命名为Translation.txt，原文需要命名为Origin.txt，将二者放在仓库根目录
+ ```
+ 7、关闭程序。
+ ```
+ # 先用快捷键Ctrl+C终止程序，然后输入以下程序退出虚拟环境。
+ deactivate
+ ```
 
 
 ---
