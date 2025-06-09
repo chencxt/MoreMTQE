@@ -279,6 +279,7 @@ with gr.Blocks() as demo:
     with gr.Tab("Information"):
         hint_text = gr.Textbox(label="提示信息", value="MoreMTQE 是一个用于评估机器翻译质量的工具，需提供一一对应的原文（Origin.txt）和译文（Translation.txt）\n使用 TST（无理解能力，字符/词级）、BERTScore-F1（有理解能力，词/段落级）、COMET（有理解能力，句/段落级）三个指标进行评分\nTST 不适合高权重，因为语义相似度不是 MTQE 的核心\n若译文包含长难句，应提高 COMET 权重，适当降低另外两个\n若译文较简单，则可提升 BERTScore 权重\n最终得分仅供参考，标红句子可能翻译有误，也可能是标点错位或专有名词干扰\n在终端界面Ctrl+C可以关闭gradio服务", lines=7)
         gr.Image("img/schematic.png", label="MoreMTQE-v1.1流程图")
+        gr.Image("img/Venn.png", label="翻译标注点结果与实际翻译可能性维恩图")
 
 
 demo.launch()
