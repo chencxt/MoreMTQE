@@ -13,15 +13,30 @@ MoreMTQE 是一个用于评估机器翻译质量的项目，其目的在于向�
 
 整合包制作中...敬请期待。
 
-## 文件命名规范
-
-请确保输入的文件命名和内容满足以下要求：
+## 文件结构/命名规范
 
 - **Origin.txt**：原文文件，包含待翻译的源语言句子。
-- **Translation.txt**：译文文件，包含机器翻译生成的目标语言句子。
-- 两个文件中的句子需 **一一对应**，即每行内容为一个句子，行数一致。
+- **Translation.txt**：译文文件，包含机器翻译生成的目标语言句子。（请确保输入的原文和译文文件命名和内容满足以下要求：两个文件中的句子需 **一一对应**，即每行内容为一个句子，行数一致。）
+- main.py: 引用了calculator_*.py的计算评分脚本
+- WebUI.py: 一个简单的可用的gradio界面脚本
+- format_txt_to_json.py: 简易的将原文和译文初步整理成json的脚本
+- plot_utils.py: 绘图脚本，已弃用。
+- ./img: 存储图片的文件夹
+- ./xlm-roberta-large: 存储RoBERTa模型的文件夹(仅整合包)
+- ./paraphrase-multilingual-mpnet-base-v2: 存储Siamese BERT模型的文件夹(仅整合包)
+- ./wmt22-cometkiwi-da: 存储COMET模型的文件夹(仅整合包)
+- ./python-3.12.8-embed-amd64: 供整合包正常运行的内嵌python环境(仅整合包)
+
 
 ## 使用教程 (默认为windows系统)：
+
+ 模型引用：
+
+  无参COMET模型(用于COMET评分)：(wmt22-cometkiwi-da)[https://huggingface.co/Unbabel/wmt22-cometkiwi-da]
+
+  Siamese BERT模型(用于进行TST评分)：(paraphrase-multilingual-mpnet-base-v2)[https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2]
+
+  RoBERTa模型(用于BERTScore评分)：(xlm-roberta-large)[https://huggingface.co/FacebookAI/xlm-roberta-large]
 
  0、如果您使用了一键整合包，请直接双击启动START_Windows.bat。无需后续操作
 
