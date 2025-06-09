@@ -30,6 +30,8 @@ MoreMTQE 是一个用于评估机器翻译质量的项目，其目的在于向�
 
 ## 使用教程 (默认为windows系统)：
 
+ 此项目经过测试，会占用您4-5GB内存。实测大约8GB及以上内存的Windows电脑均可使用。
+
  模型引用：
 
   无参COMET模型(用于COMET评分)：(wmt22-cometkiwi-da)[https://huggingface.co/Unbabel/wmt22-cometkiwi-da]
@@ -38,7 +40,9 @@ MoreMTQE 是一个用于评估机器翻译质量的项目，其目的在于向�
 
   RoBERTa模型(用于BERTScore评分)：(xlm-roberta-large)[https://huggingface.co/FacebookAI/xlm-roberta-large]
 
- 0、如果您使用了一键整合包，请直接双击启动START_Windows.bat。无需后续操作
+ 0、如果您使用了一键整合包，请直接双击启动START_Windows.bat。无需后续操作。
+ 
+ 整合包链接: https://pan.baidu.com/s/1jYlkc4ejVfBkrxLZ5BnQuQ?pwd=7fse 提取码: 7fse 
 
  1、如果您使用仓库进行配置，请先克隆仓库并跳转到仓库目录下。
  ```
